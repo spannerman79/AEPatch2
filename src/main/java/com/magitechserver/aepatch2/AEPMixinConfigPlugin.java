@@ -18,9 +18,9 @@ public class AEPMixinConfigPlugin implements IMixinConfigPlugin {
     @Override
     public void onLoad(String mixinPackage) {
         try {
-            File ae2 = new File(new File("mods"), "ae2.jar");
+            File ae2 = new File(new File("mods"), "appliedenergistics2-rv3-beta-6.jar");
             if (!ae2.exists()) {
-                throw new RuntimeException("AEPatch2 cannot load, ae2.jar file was not found! Did you forget to rename it?");
+                throw new RuntimeException("AEPatch2 cannot load, appliedenergistics2-rv3-beta-6.jar file was not found! Did you rename it?");
             }
             ((LaunchClassLoader) this.getClass().getClassLoader()).addURL(ae2.toURI().toURL());
             CoreModManager.getReparseableCoremods().add(ae2.getName());
